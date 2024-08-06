@@ -11,5 +11,5 @@ class InfluencerData(db.Model):
     likes = db.Column(db.Integer)
     comments = db.Column(db.Integer)
     thumbnail = db.Column(db.Text)  # URLが長いため、データ型をTextに変更
-    text = db.Column(db.Text, nullable=True)  # 欠損地処理のため、NULLを許可
+    text = db.Column(db.Text, nullable=True)  # 欠損値処理のため、NULLを許可
     post_date = db.Column(db.DateTime)
