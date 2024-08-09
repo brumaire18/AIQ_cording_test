@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - CSV_FILE_ID=${CSV_FILE_ID}
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+    working_dir: /app
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    ports:
+      - "3307:3306" # ポート番号3306が他のアプリによって試用されているため
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:

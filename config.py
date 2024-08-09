@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 
 # .envに取得するCSVのファイルIDおよびデータベースへの接続URLを格納
-# .envはパブリックに配置しないため、別途設定の必要がある、
+# .envはパブリックに配置しないため、別途設定の必要がある
 load_dotenv()
 
 

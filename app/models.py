@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 
+# DBモデルのクラス
 class InfluencerData(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     influencer_id = db.Column(db.String(64), index=True)
